@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0f1e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Dan Kashtan</title>
+<meta name="description" content="Dan Kashtan - new EP, out now.">
+
+<meta property="og:title" content="Dan Kashtan">
+<meta property="og:description" content="Somewhere, another reality is still awake.">
+<meta property="og:image" content="dan.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --safe-t: env(safe-area-inset-top, 0px);
+    --safe-b: env(safe-area-inset-bottom, 0px);
+  }
+
+  *{ box-sizing: border-box; }
+
+  html,body{
+    margin:0;
+    padding:0;
+    min-height:100%;
+  }
+
+  body{
+    font-family:'Poppins', system-ui, -apple-system, sans-serif;
+    color:#f4f1ee;
+    min-height:100dvh;
+    display:flex;
+    justify-content:center;
+    position:relative;
+    overflow-x:hidden;
+    -webkit-tap-highlight-color: transparent;
+    background-image: url('background_1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  main.card{
+    width:100%;
+    max-width:460px;
+    min-height:100dvh;
+    padding:calc(36px + var(--safe-t)) 24px calc(28px + var(--safe-b));
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position:relative;
+    z-index:1;
+  }
+
+  .avatar-wrap{
+    width:112px;
+    height:112px;
+    border-radius:50%;
+    padding:3px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(217,88,78,0.6));
+    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    flex:none;
+  }
+
+  .avatar, .avatar-fallback{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+  }
+
+  .avatar-fallback{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background: linear-gradient(135deg, #3a2a3d, #7a3140);
+    font-family:'Cormorant Garamond', serif;
+    font-size:34px;
+    letter-spacing:2px;
+    color:#f4f1ee;
+  }
+
+  h1.name{
+    margin:18px 0 0;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size:clamp(26px, 7vw, 32px);
+    letter-spacing:1px;
+    text-align:center;
+  }
+
+  p.tagline{
+    margin:8px 0 0;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(14px, 4vw, 16px);
+    color:rgba(244,241,238,0.75);
+    text-align:center;
+    max-width:320px;
+    line-height:1.5;
+  }
+
+  .links{
+    width:100%;
+    margin-top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .link-group{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    border:1px solid rgba(255,255,255,0.4);
+    border-radius:11px;
+    padding:9px 8px 10px;
+  }
+
+  .link-label{
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:rgba(244,241,238,0.55);
+    text-align:center;
+  }
+
+  .link-row{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+  }
+
+  .btn{
+    width:52px;
+    height:52px;
+    flex:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    color:#fff;
+    transition: transform .12s ease;
+    -webkit-user-select:none;
+    user-select:none;
+  }
+
+  .btn:active{
+    transform: scale(0.9);
+  }
+
+  .btn svg{ width:29px; height:29px; flex:none; }
+
+  .socials{
+    display:flex;
+    gap:16px;
+    margin-top:34px;
+  }
+
+  .social-btn{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:rgba(244,241,238,0.06);
+    border:1.3px solid rgba(244,241,238,0.35);
+    color:#f4f1ee;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 14px rgba(0,0,0,0.25);
+    transition: transform .12s ease, background .12s ease, border-color .12s ease;
+  }
+
+  .social-btn:active{ transform: scale(0.92); background:rgba(244,241,238,0.14); border-color:rgba(244,241,238,0.55); }
+
+  .social-btn svg{ width:20px; height:20px; }
+
+  footer.foot{
+    margin-top:auto;
+    padding-top:30px;
+    font-size:11px;
+    letter-spacing:0.5px;
+    color:rgba(244,241,238,0.35);
+    text-align:center;
+    line-height:1.7;
+  }
+
+  footer.foot .credit{
+    color:rgba(244,241,238,0.22);
+  }
+
+  @keyframes fadeUp{
+    from{ opacity:0; transform:translateY(14px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  .avatar-wrap{ animation: fadeUp .6s ease both; animation-delay: .05s; }
+  h1.name{ animation: fadeUp .6s ease both; animation-delay: .15s; }
+  p.tagline{ animation: fadeUp .6s ease both; animation-delay: .25s; }
+  .links .link-group:nth-child(1){ animation: fadeUp .6s ease both; animation-delay: .35s; }
+  .links .link-group:nth-child(2){ animation: fadeUp .6s ease both; animation-delay: .42s; }
+  .links .link-group:nth-child(3){ animation: fadeUp .6s ease both; animation-delay: .49s; }
+  .socials{ animation: fadeUp .6s ease both; animation-delay: .58s; }
+  footer.foot{ animation: fadeUp .6s ease both; animation-delay: .66s; }
+
+  @media (prefers-reduced-motion: reduce){
+    .avatar-wrap, h1.name, p.tagline, .links .link-group, .socials, footer.foot{
+      animation:none;
+      opacity:1;
+      transform:none;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <main class="card">
+
+    <div class="avatar-wrap">
+      <img class="avatar" src="dan.png" alt="Dan Kashtan"
+           onerror="this.remove(); document.querySelector('.avatar-fallback').style.display='flex';">
+      <div class="avatar-fallback">DK</div>
+    </div>
+
+    <h1 class="name">Dan Kashtan</h1>
+    <p class="tagline">Somewhere, another reality is still awake.</p>
+
+    <section class="links">
+
+      <div class="link-group">
+        <span class="link-label">Another Place (Original Mix)</span>
+        <div class="link-row">
+          <a class="btn" href="https://open.spotify.com/track/6DP1PaZ5QgoObLGPXJ8KJS?si=c99a49b1f7b143d8" target="_blank" rel="noopener" aria-label="Listen on Spotify" data-counter-key="ap-spotify">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M17.5 17.34c-.24.36-.66.48-1.02.24-2.82-1.74-6.36-2.1-10.56-1.14-.42.12-.78-.18-.9-.54-.12-.42.18-.78.54-.9 4.56-1.02 8.52-.6 11.64 1.32.42.18.48.66.3 1.02zm1.44-3.3c-.3.42-.84.6-1.26.3-3.24-1.98-8.16-2.58-11.94-1.38-.48.12-1.02-.12-1.14-.6-.12-.48.12-1.02.6-1.14 4.38-1.32 9.78-.66 13.5 1.62.36.24.54.78.24 1.2zm.12-3.42C15 8.4 8.94 8.16 5.4 9.24c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.08-1.26 10.74-1.02 14.94 1.5.54.3.72 1.02.36 1.56-.3.48-1.02.66-1.56.36z" fill="#fff"/></svg>
+            </a>
+          <a class="btn" href="https://music.apple.com/us/song/another-place/6778882749" target="_blank" rel="noopener" aria-label="Listen on Apple Music" data-counter-key="ap-apple">
+              <svg viewBox="0 0 24 24"><defs><linearGradient id="amg-ap-apple" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fa5f6f"/><stop offset="1" stop-color="#fa233c"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#amg-ap-apple)"/><circle cx="8.6" cy="16.6" r="2.1" fill="#fff"/><circle cx="15.6" cy="15" r="2.1" fill="#fff"/><path d="M10.6 16.6V9.3l7-1.4v6.9" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          <a class="btn" href="https://music.youtube.com/watch?v=l6oeJmm5-2Q&si=AlkmfTF4k3CouEYg" target="_blank" rel="noopener" aria-label="Watch on YouTube" data-counter-key="ap-youtube">
+              <svg viewBox="0 0 24 24"><rect x="1" y="4.5" width="22" height="15" rx="5" fill="#FF0000"/><path d="M9.8 15.7V8.3l7 3.7z" fill="#fff"/></svg>
+            </a>
+        </div>
+      </div>
+
+      <div class="link-group">
+        <span class="link-label">Rebirth Echoes (Original Mix)</span>
+        <div class="link-row">
+          <a class="btn" href="https://open.spotify.com/track/6eSA5h9Uel6uKl2dFn6QwR?si=e9e2cd9b4b884e43" target="_blank" rel="noopener" aria-label="Listen on Spotify" data-counter-key="re-spotify">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M17.5 17.34c-.24.36-.66.48-1.02.24-2.82-1.74-6.36-2.1-10.56-1.14-.42.12-.78-.18-.9-.54-.12-.42.18-.78.54-.9 4.56-1.02 8.52-.6 11.64 1.32.42.18.48.66.3 1.02zm1.44-3.3c-.3.42-.84.6-1.26.3-3.24-1.98-8.16-2.58-11.94-1.38-.48.12-1.02-.12-1.14-.6-.12-.48.12-1.02.6-1.14 4.38-1.32 9.78-.66 13.5 1.62.36.24.54.78.24 1.2zm.12-3.42C15 8.4 8.94 8.16 5.4 9.24c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.08-1.26 10.74-1.02 14.94 1.5.54.3.72 1.02.36 1.56-.3.48-1.02.66-1.56.36z" fill="#fff"/></svg>
+            </a>
+          <a class="btn" href="https://music.apple.com/us/song/rebirth-echoes/6778882751" target="_blank" rel="noopener" aria-label="Listen on Apple Music" data-counter-key="re-apple">
+              <svg viewBox="0 0 24 24"><defs><linearGradient id="amg-re-apple" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fa5f6f"/><stop offset="1" stop-color="#fa233c"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#amg-re-apple)"/><circle cx="8.6" cy="16.6" r="2.1" fill="#fff"/><circle cx="15.6" cy="15" r="2.1" fill="#fff"/><path d="M10.6 16.6V9.3l7-1.4v6.9" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          <a class="btn" href="https://music.youtube.com/watch?v=1ENer8wF8KE&si=2qVrKjq42xRdbfzA" target="_blank" rel="noopener" aria-label="Watch on YouTube" data-counter-key="re-youtube">
+              <svg viewBox="0 0 24 24"><rect x="1" y="4.5" width="22" height="15" rx="5" fill="#FF0000"/><path d="M9.8 15.7V8.3l7 3.7z" fill="#fff"/></svg>
+            </a>
+        </div>
+      </div>
+
+      <div class="link-group ep-group">
+        <span class="link-label">Another Place - Full EP</span>
+        <div class="link-row">
+          <a class="btn" href="https://open.spotify.com/album/1sv0QVSLogxLfzodb2SW5T?si=H_gxH9q7TYSxpoFf6KI_wQ" target="_blank" rel="noopener" aria-label="Listen on Spotify" data-counter-key="ep-spotify">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#1DB954"/><path d="M17.5 17.34c-.24.36-.66.48-1.02.24-2.82-1.74-6.36-2.1-10.56-1.14-.42.12-.78-.18-.9-.54-.12-.42.18-.78.54-.9 4.56-1.02 8.52-.6 11.64 1.32.42.18.48.66.3 1.02zm1.44-3.3c-.3.42-.84.6-1.26.3-3.24-1.98-8.16-2.58-11.94-1.38-.48.12-1.02-.12-1.14-.6-.12-.48.12-1.02.6-1.14 4.38-1.32 9.78-.66 13.5 1.62.36.24.54.78.24 1.2zm.12-3.42C15 8.4 8.94 8.16 5.4 9.24c-.6.18-1.2-.18-1.38-.72-.18-.6.18-1.2.72-1.38 4.08-1.26 10.74-1.02 14.94 1.5.54.3.72 1.02.36 1.56-.3.48-1.02.66-1.56.36z" fill="#fff"/></svg>
+            </a>
+          <a class="btn" href="https://music.apple.com/us/album/another-place-ep/6778882748" target="_blank" rel="noopener" aria-label="Listen on Apple Music" data-counter-key="ep-apple">
+              <svg viewBox="0 0 24 24"><defs><linearGradient id="amg-ep-apple" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fa5f6f"/><stop offset="1" stop-color="#fa233c"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6.5" fill="url(#amg-ep-apple)"/><circle cx="8.6" cy="16.6" r="2.1" fill="#fff"/><circle cx="15.6" cy="15" r="2.1" fill="#fff"/><path d="M10.6 16.6V9.3l7-1.4v6.9" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          <a class="btn" href="https://music.youtube.com/watch?v=l6oeJmm5-2Q&si=AlkmfTF4k3CouEYg" target="_blank" rel="noopener" aria-label="Watch on YouTube" data-counter-key="ep-youtube">
+              <svg viewBox="0 0 24 24"><rect x="1" y="4.5" width="22" height="15" rx="5" fill="#FF0000"/><path d="M9.8 15.7V8.3l7 3.7z" fill="#fff"/></svg>
+            </a>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="socials">
+      <a class="social-btn" href="https://instagram.com/the_kashtan" target="_blank" rel="noopener" aria-label="Instagram" data-counter-key="soc-instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.3" y="3.3" width="17.4" height="17.4" rx="5.5"/><circle cx="12" cy="12" r="4.3"/><circle cx="17.1" cy="6.9" r="0.9" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a class="social-btn" href="https://music.apple.com/us/artist/dan-kashtan/1585642901" target="_blank" rel="noopener" aria-label="Apple Music" data-counter-key="soc-apple">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 16.2V7.6l7.5-1.5v8.1"/><circle cx="9.2" cy="16.4" r="2.4" fill="currentColor" stroke="none"/><circle cx="16.7" cy="14.7" r="2.4" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a class="social-btn" href="https://www.youtube.com/channel/UCZ-B1t_IRV0TPFb_VRyasUQ" target="_blank" rel="noopener" aria-label="YouTube" data-counter-key="soc-youtube">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6.2" width="18" height="11.6" rx="3.6"/><path d="M10.3 9.6v4.8l4.4-2.4z" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a class="social-btn" href="https://open.spotify.com/artist/6768OkDj2Sq0nabgguOig1?si=WNAyDyykQBG7ztvs1VDsGg" target="_blank" rel="noopener" aria-label="Spotify" data-counter-key="soc-spotify">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M7.2 10.2c3.3-.9 6.8-.6 9.6 1"/><path d="M7.8 13c2.7-.7 5.6-.5 8 .9"/><path d="M8.4 15.6c2.1-.5 4.3-.4 6.1.6"/></svg>
+      </a>
+    </div>
+
+    <footer class="foot">
+      <span class="credit">Designed &amp; built by Dan Kashtan</span>
+    </footer>
+
+  </main>
+
+  <script>
+  (function(){
+    var NS = 'dan-kashtan-another-place-ep';
+    var BASE = 'https://abacus.jasoncameron.dev';
+
+    function setText(el, val){
+      if(el) el.textContent = (val === null || val === undefined) ? '0' : val;
+    }
+
+    function hit(key){
+      return fetch(BASE + '/hit/' + NS + '/' + key)
+        .then(function(r){ return r.json(); })
+        .then(function(d){ return d.value; })
+        .catch(function(){ return null; });
+    }
+
+    function get(key){
+      return fetch(BASE + '/get/' + NS + '/' + key)
+        .then(function(r){ return r.json(); })
+        .then(function(d){ return d.value; })
+        .catch(function(){ return null; });
+    }
+
+    function seenFlag(key){ return 'seen_' + NS + '_' + key; }
+
+    function trackPageview(){
+      hit('page_general').then(function(v){ setText(document.getElementById('page-stat-general'), v); });
+      var flag = seenFlag('page_unique');
+      if(!localStorage.getItem(flag)){
+        localStorage.setItem(flag, '1');
+        hit('page_unique').then(function(v){ setText(document.getElementById('page-stat-unique'), v); });
+      } else {
+        get('page_unique').then(function(v){ setText(document.getElementById('page-stat-unique'), v); });
+      }
+    }
+
+    function initIconCounts(){
+      document.querySelectorAll('.mini-stats[data-key]').forEach(function(block){
+        var key = block.getAttribute('data-key');
+        get(key + '_general').then(function(v){ setText(block.querySelector('.g'), v); });
+        get(key + '_unique').then(function(v){ setText(block.querySelector('.u'), v); });
+      });
+    }
+
+    function trackIconClick(key){
+      var block = document.querySelector('.mini-stats[data-key="' + key + '"]');
+      hit(key + '_general').then(function(v){ setText(block && block.querySelector('.g'), v); });
+      var flag = seenFlag(key + '_unique');
+      if(!localStorage.getItem(flag)){
+        localStorage.setItem(flag, '1');
+        hit(key + '_unique').then(function(v){ setText(block && block.querySelector('.u'), v); });
+      } else {
+        get(key + '_unique').then(function(v){ setText(block && block.querySelector('.u'), v); });
+      }
+    }
+
+    trackPageview();
+    initIconCounts();
+
+    document.querySelectorAll('a[data-counter-key]').forEach(function(a){
+      a.addEventListener('click', function(){
+        trackIconClick(a.getAttribute('data-counter-key'));
+      });
+    });
+  })();
+  </script>
+
+</body>
+</html>
