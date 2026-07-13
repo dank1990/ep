@@ -2,12 +2,8 @@
 
 Everything lives in one file: `index.html`. You can edit it directly on GitHub (click the pencil icon on the file) — no coding needed.
 
-## 1. Add your photos
-Drop these two files into this same folder (same names, lowercase):
-- `profile.jpg` — your profile picture (square works best)
-- `background.jpg` — the background photo
-
-If they're missing, the page still looks fine (grey initials circle + the gradient background shown in the mock-up).
+## 1. Photos
+Already set up — `dan.png` (profile) and `background_1.png` (background) are in this folder and referenced in `index.html`. To swap them later, replace the files (keep the same names) or update the `src="..."` in `index.html`.
 
 ## 2. Add your links
 Open `index.html`, find each placeholder below, and replace it with your real link (keep the quotes):
