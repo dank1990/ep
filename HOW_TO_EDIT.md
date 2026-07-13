@@ -1,9 +1,9 @@
 # Editing this page
 
-Everything lives in one file: `index.html`. You can edit it directly on GitHub (click the pencil icon on the file) — no coding needed.
+Everything lives in one file: `index.html`. You can edit it directly on GitHub (click the pencil icon on the file) - no coding needed.
 
 ## 1. Photos
-Already set up — `dan.png` (profile) and `background_1.png` (background) are in this folder and referenced in `index.html`. To swap them later, replace the files (keep the same names) or update the `src="..."` in `index.html`.
+Already set up - `dan.png` (profile) and `background_1.png` (background) are in this folder and referenced in `index.html`. To swap them later, replace the files (keep the same names) or update the `src="..."` in `index.html`.
 
 ## 2. Links
 All real links (Spotify/YouTube for both singles and the EP, plus Instagram/Facebook/YouTube/Spotify) are already filled in in `index.html`. To change one later, just edit the `href="..."` value on the matching `<a>` tag.
