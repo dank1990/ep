@@ -51,9 +51,11 @@
     -webkit-tap-highlight-color: transparent;
   }
 
-  /* background */
+  /* background — absolute (not fixed) so it stretches across the full scrollable
+     page height and object-fit:cover always fills it with no gaps, even if the
+     page grows taller than one screen */
   .bg-gradient{
-    position:fixed;
+    position:absolute;
     inset:0;
     z-index:-3;
     background:
@@ -62,24 +64,24 @@
   }
 
   .bg-photo{
-    position:fixed;
+    position:absolute;
     inset:0;
     width:100%;
     height:100%;
     object-fit:cover;
     z-index:-2;
-    opacity:0.55;
+    opacity:0.85;
   }
 
   .bg-overlay{
-    position:fixed;
+    position:absolute;
     inset:0;
     z-index:-1;
-    background: linear-gradient(180deg, rgba(11,15,30,0.55) 0%, rgba(11,15,30,0.25) 30%, rgba(11,15,30,0.15) 55%, rgba(11,15,30,0.55) 100%);
+    background: linear-gradient(180deg, rgba(11,15,30,0.45) 0%, rgba(11,15,30,0.15) 30%, rgba(11,15,30,0.1) 55%, rgba(11,15,30,0.45) 100%);
   }
 
   .stars{
-    position:fixed;
+    position:absolute;
     inset:0;
     z-index:-2;
     background-image:
@@ -195,7 +197,6 @@
     font-size:14.5px;
     padding:14px 10px;
     border-radius:14px;
-    background: linear-gradient(180deg, var(--coral) 0%, var(--coral-dark) 100%);
     box-shadow: 0 6px 16px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.15);
     transition: transform .12s ease, box-shadow .12s ease;
     -webkit-user-select:none;
@@ -209,8 +210,12 @@
 
   .btn svg{ width:17px; height:17px; flex:none; }
 
-  .ep-group .btn{
-    background: linear-gradient(180deg, #e8b23d 0%, #c78f27 100%);
+  .btn-spotify{
+    background: linear-gradient(180deg, #1b5e3a 0%, #0c2c1c 100%);
+  }
+
+  .btn-youtube{
+    background: linear-gradient(180deg, #d8342c 0%, #931f1a 100%);
   }
 
   .socials{
@@ -270,11 +275,11 @@
       <div class="link-group">
         <span class="link-label">Lead Single — Another Place</span>
         <div class="link-row">
-          <a class="btn" href="https://open.spotify.com/track/6DP1PaZ5QgoObLGPXJ8KJS?si=c99a49b1f7b143d8" target="_blank" rel="noopener">
+          <a class="btn btn-spotify" href="https://open.spotify.com/track/6DP1PaZ5QgoObLGPXJ8KJS?si=c99a49b1f7b143d8" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M7.2 10.2c3.3-.9 6.8-.6 9.6 1"/><path d="M7.8 13c2.7-.7 5.6-.5 8 .9"/><path d="M8.4 15.6c2.1-.5 4.3-.4 6.1.6"/></svg>
             Spotify
           </a>
-          <a class="btn" href="https://www.youtube.com/watch?v=l6oeJmm5-2Q" target="_blank" rel="noopener">
+          <a class="btn btn-youtube" href="https://www.youtube.com/watch?v=l6oeJmm5-2Q" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="6.2" width="18.8" height="11.6" rx="3.6"/><path d="M10.3 9.6v4.8l4.4-2.4z" fill="currentColor" stroke="none"/></svg>
             YouTube
           </a>
@@ -284,11 +289,11 @@
       <div class="link-group">
         <span class="link-label">Second Single — Rebirth Echoes</span>
         <div class="link-row">
-          <a class="btn" href="https://open.spotify.com/track/6eSA5h9Uel6uKl2dFn6QwR?si=e9e2cd9b4b884e43" target="_blank" rel="noopener">
+          <a class="btn btn-spotify" href="https://open.spotify.com/track/6eSA5h9Uel6uKl2dFn6QwR?si=e9e2cd9b4b884e43" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M7.2 10.2c3.3-.9 6.8-.6 9.6 1"/><path d="M7.8 13c2.7-.7 5.6-.5 8 .9"/><path d="M8.4 15.6c2.1-.5 4.3-.4 6.1.6"/></svg>
             Spotify
           </a>
-          <a class="btn" href="https://www.youtube.com/watch?v=1ENer8wF8KE" target="_blank" rel="noopener">
+          <a class="btn btn-youtube" href="https://www.youtube.com/watch?v=1ENer8wF8KE" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="6.2" width="18.8" height="11.6" rx="3.6"/><path d="M10.3 9.6v4.8l4.4-2.4z" fill="currentColor" stroke="none"/></svg>
             YouTube
           </a>
@@ -298,11 +303,11 @@
       <div class="link-group ep-group">
         <span class="link-label">Full EP — Another Place</span>
         <div class="link-row">
-          <a class="btn" href="https://open.spotify.com/album/1sv0QVSLogxLfzodb2SW5T?si=H_gxH9q7TYSxpoFf6KI_wQ" target="_blank" rel="noopener">
+          <a class="btn btn-spotify" href="https://open.spotify.com/album/1sv0QVSLogxLfzodb2SW5T?si=H_gxH9q7TYSxpoFf6KI_wQ" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M7.2 10.2c3.3-.9 6.8-.6 9.6 1"/><path d="M7.8 13c2.7-.7 5.6-.5 8 .9"/><path d="M8.4 15.6c2.1-.5 4.3-.4 6.1.6"/></svg>
             Spotify
           </a>
-          <a class="btn" href="https://www.youtube.com/watch?v=l6oeJmm5-2Q&list=OLAK5uy_lW7br5fNEbzkbRutgIBN7PP2RllYAyNxo" target="_blank" rel="noopener">
+          <a class="btn btn-youtube" href="https://www.youtube.com/watch?v=l6oeJmm5-2Q&list=OLAK5uy_lW7br5fNEbzkbRutgIBN7PP2RllYAyNxo" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="6.2" width="18.8" height="11.6" rx="3.6"/><path d="M10.3 9.6v4.8l4.4-2.4z" fill="currentColor" stroke="none"/></svg>
             YouTube
           </a>
