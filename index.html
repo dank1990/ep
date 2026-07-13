@@ -165,13 +165,24 @@
     gap:14px;
   }
 
+  .btn-tag{
+    font-size:6.5px;
+    font-weight:700;
+    letter-spacing:0.3px;
+    text-transform:uppercase;
+    color:rgba(244,241,238,0.8);
+    line-height:1;
+  }
+
   .btn{
     width:52px;
-    height:52px;
+    height:56px;
     flex:none;
     display:flex;
+    flex-direction:column;
     align-items:center;
     justify-content:center;
+    gap:4px;
     text-decoration:none;
     color:#fff;
     border-radius:15px;
@@ -189,7 +200,7 @@
     box-shadow: 0 3px 10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.06);
   }
 
-  .btn svg{ width:23px; height:23px; flex:none; }
+  .btn svg{ width:19px; height:19px; flex:none; }
 
   .btn-spotify{
     background: linear-gradient(180deg, rgba(29,185,84,0.28) 0%, rgba(6,26,16,0.62) 100%);
@@ -289,14 +300,17 @@
         <span class="link-label">Another Place (Original Mix)</span>
         <div class="link-row">
           <a class="btn btn-spotify" href="https://open.spotify.com/track/6DP1PaZ5QgoObLGPXJ8KJS?si=c99a49b1f7b143d8" target="_blank" rel="noopener" aria-label="Listen on Spotify">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M7.2 10.2c3.3-.9 6.8-.6 9.6 1"/><path d="M7.8 13c2.7-.7 5.6-.5 8 .9"/><path d="M8.4 15.6c2.1-.5 4.3-.4 6.1.6"/></svg>
-          </a>
+              <span class="btn-tag">spotify</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M7.2 10.2c3.3-.9 6.8-.6 9.6 1"/><path d="M7.8 13c2.7-.7 5.6-.5 8 .9"/><path d="M8.4 15.6c2.1-.5 4.3-.4 6.1.6"/></svg>
+            </a>
           <a class="btn btn-apple" href="https://music.apple.com/us/song/another-place/6778882749" target="_blank" rel="noopener" aria-label="Listen on Apple Music">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 16.2V7.6l7.5-1.5v8.1"/><circle cx="9.2" cy="16.4" r="2.4" fill="currentColor" stroke="none"/><circle cx="16.7" cy="14.7" r="2.4" fill="currentColor" stroke="none"/></svg>
-          </a>
+              <span class="btn-tag">apple</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 16.2V7.6l7.5-1.5v8.1"/><circle cx="9.2" cy="16.4" r="2.4" fill="currentColor" stroke="none"/><circle cx="16.7" cy="14.7" r="2.4" fill="currentColor" stroke="none"/></svg>
+            </a>
           <a class="btn btn-youtube" href="https://music.youtube.com/watch?v=l6oeJmm5-2Q&si=AlkmfTF4k3CouEYg" target="_blank" rel="noopener" aria-label="Watch on YouTube">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="6.2" width="18.8" height="11.6" rx="3.6"/><path d="M10.3 9.6v4.8l4.4-2.4z" fill="currentColor" stroke="none"/></svg>
-          </a>
+              <span class="btn-tag">youtube</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="6.2" width="18.8" height="11.6" rx="3.6"/><path d="M10.3 9.6v4.8l4.4-2.4z" fill="currentColor" stroke="none"/></svg>
+            </a>
         </div>
       </div>
 
@@ -304,14 +318,17 @@
         <span class="link-label">Rebirth Echoes (Original Mix)</span>
         <div class="link-row">
           <a class="btn btn-spotify" href="https://open.spotify.com/track/6eSA5h9Uel6uKl2dFn6QwR?si=e9e2cd9b4b884e43" target="_blank" rel="noopener" aria-label="Listen on Spotify">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M7.2 10.2c3.3-.9 6.8-.6 9.6 1"/><path d="M7.8 13c2.7-.7 5.6-.5 8 .9"/><path d="M8.4 15.6c2.1-.5 4.3-.4 6.1.6"/></svg>
-          </a>
+              <span class="btn-tag">spotify</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M7.2 10.2c3.3-.9 6.8-.6 9.6 1"/><path d="M7.8 13c2.7-.7 5.6-.5 8 .9"/><path d="M8.4 15.6c2.1-.5 4.3-.4 6.1.6"/></svg>
+            </a>
           <a class="btn btn-apple" href="https://music.apple.com/us/song/rebirth-echoes/6778882751" target="_blank" rel="noopener" aria-label="Listen on Apple Music">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 16.2V7.6l7.5-1.5v8.1"/><circle cx="9.2" cy="16.4" r="2.4" fill="currentColor" stroke="none"/><circle cx="16.7" cy="14.7" r="2.4" fill="currentColor" stroke="none"/></svg>
-          </a>
+              <span class="btn-tag">apple</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 16.2V7.6l7.5-1.5v8.1"/><circle cx="9.2" cy="16.4" r="2.4" fill="currentColor" stroke="none"/><circle cx="16.7" cy="14.7" r="2.4" fill="currentColor" stroke="none"/></svg>
+            </a>
           <a class="btn btn-youtube" href="https://music.youtube.com/watch?v=1ENer8wF8KE&si=2qVrKjq42xRdbfzA" target="_blank" rel="noopener" aria-label="Watch on YouTube">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="6.2" width="18.8" height="11.6" rx="3.6"/><path d="M10.3 9.6v4.8l4.4-2.4z" fill="currentColor" stroke="none"/></svg>
-          </a>
+              <span class="btn-tag">youtube</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="6.2" width="18.8" height="11.6" rx="3.6"/><path d="M10.3 9.6v4.8l4.4-2.4z" fill="currentColor" stroke="none"/></svg>
+            </a>
         </div>
       </div>
 
@@ -319,14 +336,17 @@
         <span class="link-label">Another Place - Full EP</span>
         <div class="link-row">
           <a class="btn btn-spotify" href="https://open.spotify.com/album/1sv0QVSLogxLfzodb2SW5T?si=H_gxH9q7TYSxpoFf6KI_wQ" target="_blank" rel="noopener" aria-label="Listen on Spotify">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M7.2 10.2c3.3-.9 6.8-.6 9.6 1"/><path d="M7.8 13c2.7-.7 5.6-.5 8 .9"/><path d="M8.4 15.6c2.1-.5 4.3-.4 6.1.6"/></svg>
-          </a>
+              <span class="btn-tag">spotify</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M7.2 10.2c3.3-.9 6.8-.6 9.6 1"/><path d="M7.8 13c2.7-.7 5.6-.5 8 .9"/><path d="M8.4 15.6c2.1-.5 4.3-.4 6.1.6"/></svg>
+            </a>
           <a class="btn btn-apple" href="https://music.apple.com/us/album/another-place-ep/6778882748" target="_blank" rel="noopener" aria-label="Listen on Apple Music">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 16.2V7.6l7.5-1.5v8.1"/><circle cx="9.2" cy="16.4" r="2.4" fill="currentColor" stroke="none"/><circle cx="16.7" cy="14.7" r="2.4" fill="currentColor" stroke="none"/></svg>
-          </a>
+              <span class="btn-tag">apple</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 16.2V7.6l7.5-1.5v8.1"/><circle cx="9.2" cy="16.4" r="2.4" fill="currentColor" stroke="none"/><circle cx="16.7" cy="14.7" r="2.4" fill="currentColor" stroke="none"/></svg>
+            </a>
           <a class="btn btn-youtube" href="https://music.youtube.com/watch?v=l6oeJmm5-2Q&si=AlkmfTF4k3CouEYg" target="_blank" rel="noopener" aria-label="Watch on YouTube">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="6.2" width="18.8" height="11.6" rx="3.6"/><path d="M10.3 9.6v4.8l4.4-2.4z" fill="currentColor" stroke="none"/></svg>
-          </a>
+              <span class="btn-tag">youtube</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.6" y="6.2" width="18.8" height="11.6" rx="3.6"/><path d="M10.3 9.6v4.8l4.4-2.4z" fill="currentColor" stroke="none"/></svg>
+            </a>
         </div>
       </div>
 
